@@ -25,7 +25,6 @@ import mx.mariovaldez.fetchcodechallenge.navigation.NavigationActions
 
 @Composable
 fun SplashScreen(navController: NavController) {
-
     val scaleAnimation: Animatable<Float, AnimationVector1D> = remember {
         Animatable(0f)
     }
@@ -40,7 +39,6 @@ fun SplashScreen(navController: NavController) {
     DesignSplashScreen(
         scaleAnimation = scaleAnimation
     )
-
 }
 
 @Composable
@@ -48,7 +46,7 @@ fun AnimationSplashContent(
     scaleAnimation: Animatable<Float, AnimationVector1D>,
     durationMillisAnimation: Int,
     delayScreen: Long,
-    navigationActions: NavigationActions,
+    navigationActions: NavigationActions
 ) {
     LaunchedEffect(key1 = true) {
         scaleAnimation.animateTo(

@@ -1,7 +1,6 @@
 package mx.mariovaldez.fetchcodechallenge.data.remote.models
 
 import mx.mariovaldez.fetchcodechallenge.data.remote.mappers.ClientExceptionMapper
-import mx.mariovaldez.fetchcodechallenge.data.remote.models.ResponseCall
 import retrofit2.Call
 import retrofit2.CallAdapter
 

@@ -9,12 +9,10 @@ import mx.mariovaldez.fetchcodechallenge.navigation.Screens.DETAILS
 import mx.mariovaldez.fetchcodechallenge.navigation.Screens.HOME
 import mx.mariovaldez.fetchcodechallenge.navigation.Screens.SPLASH
 
-
 private object Screens {
     const val SPLASH = "splash"
     const val HOME = "home"
     const val DETAILS = "detail?hiring={hiring}"
-
 }
 
 object Destinations {
@@ -22,7 +20,6 @@ object Destinations {
     const val HOME_ROUTE = HOME
     const val DETAILS_ROUTE = DETAILS
 }
-
 
 sealed class DestinationScreen(val route: String) {
     object SplashScreen : DestinationScreen(SPLASH)
@@ -62,7 +59,6 @@ class NavigationActions(
                 saveState = true
             }
             launchSingleTop = true
-
         }
     }
 }

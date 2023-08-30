@@ -38,7 +38,7 @@ import mx.mariovaldez.fetchcodechallenge.navigation.NavigationActions
 @Composable
 internal fun HomeScreen(
     navController: NavController,
-    viewModel: HomeViewModel = hiltViewModel(),
+    viewModel: HomeViewModel = hiltViewModel()
 ) {
     val state by viewModel.state.collectAsState()
     when (state) {
@@ -73,10 +73,8 @@ fun ShowProgress() {
     ) {
         Column(modifier = Modifier.align(Alignment.CenterVertically)) {
             Indicator()
-
         }
     }
-
 }
 
 @Composable
@@ -84,7 +82,6 @@ fun ListItem(
     navController: NavController,
     values: Map<Int, List<HiringUI>>
 ) {
-
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = Modifier
@@ -106,7 +103,6 @@ fun ListItem(
             }
         }
     }
-
 }
 
 @Composable
@@ -115,7 +111,6 @@ fun Item(
     value: List<HiringUI>,
     navController: NavController
 ) {
-
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -124,14 +119,14 @@ fun Item(
             .clickable(
                 onClick = {
                     NavigationActions(navController).navigateToDetails(value)
-                }),
+                }
+            )
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-
             Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                 Text(
                     text = key.toString(),
@@ -140,7 +135,6 @@ fun Item(
                     fontWeight = FontWeight.Bold,
                     style = typography.labelLarge
                 )
-
             }
         }
     }
@@ -148,7 +142,6 @@ fun Item(
 
 @Composable
 internal fun DisplayAlert(viewModel: HomeViewModel) {
-
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -182,9 +175,6 @@ internal fun DisplayAlert(viewModel: HomeViewModel) {
             ) {
                 Text(text = "Try Again", color = Color.White)
             }
-
         }
     }
 }
-
-
