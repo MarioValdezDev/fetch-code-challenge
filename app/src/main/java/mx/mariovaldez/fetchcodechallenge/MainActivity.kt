@@ -15,7 +15,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         if (BuildConfig.DEBUG) {
-            Timber.plant(Timber.DebugTree()
+            Timber.plant(
+                Timber.DebugTree()
             )
         }
         setContent {

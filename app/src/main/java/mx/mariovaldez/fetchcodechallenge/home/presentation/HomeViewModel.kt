@@ -12,12 +12,11 @@ import javax.inject.Inject
 
 @HiltViewModel
 internal class HomeViewModel @Inject constructor(
-    private val getHiring: GetHiring,
+    private val getHiring: GetHiring
 ) : ViewModel() {
 
     private val _state: MutableStateFlow<HomeState> = MutableStateFlow(HomeState.Default)
     val state: StateFlow<HomeState> get() = _state
-
 
     fun fetchData() {
         viewModelScope.launch {
@@ -33,7 +32,6 @@ internal class HomeViewModel @Inject constructor(
                     _state.value = HomeState.Error
                 }
         }
-
     }
 
     init {
@@ -43,7 +41,7 @@ internal class HomeViewModel @Inject constructor(
     sealed class HomeState {
         object Default : HomeState()
         object Loading : HomeState()
-        data class Success(val hiring: Map<Int,List<HiringUI>>) : HomeState()
+        data class Success(val hiring: Map<Int, List<HiringUI>>) : HomeState()
         object Error : HomeState()
     }
 }

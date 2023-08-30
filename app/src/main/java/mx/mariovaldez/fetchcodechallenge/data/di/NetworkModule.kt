@@ -33,7 +33,7 @@ internal object NetworkModule {
     @Singleton
     @Provides
     fun provideOkHttpClient(
-        headersInterceptor: HeadersInterceptor,
+        headersInterceptor: HeadersInterceptor
     ): okhttp3.OkHttpClient = OkHttpClient().newBuilder().apply {
         readTimeout(READ_TIMEOUT, TimeUnit.SECONDS)
         connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS)
@@ -54,7 +54,7 @@ internal object NetworkModule {
     fun providesRetrofit(
         okHttpClient: OkHttpClient,
         gson: Gson,
-        responseCallAdapterFactory: ResponseCallAdapterFactory,
+        responseCallAdapterFactory: ResponseCallAdapterFactory
     ): Retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.BASE_URL)
         .client(okHttpClient)
@@ -65,7 +65,7 @@ internal object NetworkModule {
     @Singleton
     @Provides
     fun providesApiServices(
-        apiServiceFactory: ApiServiceFactory,
+        apiServiceFactory: ApiServiceFactory
     ): ApiServices = apiServiceFactory.createApiService(
         ApiServices::class.java
     )

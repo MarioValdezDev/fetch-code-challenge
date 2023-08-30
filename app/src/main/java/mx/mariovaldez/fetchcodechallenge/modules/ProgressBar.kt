@@ -27,9 +27,9 @@ fun Indicator(
     size: Dp = 32.dp, // indicator size
     sweepAngle: Float = 90f, // angle (lenght) of indicator arc
     color: Color = MaterialTheme.colorScheme.primary, // color of indicator arc line
-    strokeWidth: Dp = ProgressIndicatorDefaults.CircularStrokeWidth //width of cicle and ar lines
+    strokeWidth: Dp = ProgressIndicatorDefaults.CircularStrokeWidth // width of cicle and ar lines
 ) {
-    ////// animation //////
+    // //// animation //////
 
     // docs recomend use transition animation for infinite loops
     // https://developer.android.com/jetpack/compose/animation
@@ -51,7 +51,7 @@ fun Indicator(
         )
     )
 
-    ////// draw /////
+    // //// draw /////
 
     // define stroke with given width and arc ends type considering device DPI
     val stroke = with(LocalDensity.current) {
@@ -63,7 +63,7 @@ fun Indicator(
         Modifier
             .progressSemantics() // (optional) for Accessibility services
             .size(size) // canvas size
-            .padding(strokeWidth / 2) //padding. otherwise, not the whole circle will fit in the canvas
+            .padding(strokeWidth / 2) // padding. otherwise, not the whole circle will fit in the canvas
     ) {
         // draw "background" (gray) circle with defined stroke.
         // without explicit center and radius it fit canvas bounds
