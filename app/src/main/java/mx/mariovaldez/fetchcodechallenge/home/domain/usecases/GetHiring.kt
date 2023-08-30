@@ -11,8 +11,7 @@ internal class GetHiring @Inject constructor(
     private val defaultDispatcherProvider: DefaultDispatcherProvider
 ) {
 
-    suspend operator fun invoke(): Map<Int,List<HiringUI>> = withContext(defaultDispatcherProvider.default) {
+    suspend operator fun invoke(): Map<Int, List<HiringUI>> = withContext(defaultDispatcherProvider.default) {
         repository.getHiring()
     }
-
 }

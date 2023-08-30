@@ -9,5 +9,4 @@ internal class RemoteDataSource @Inject constructor(
 ) {
 
     suspend fun getHiring(): List<HiringRequest> = apiServices.getHiring()
-
 }
